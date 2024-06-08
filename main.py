@@ -1,4 +1,4 @@
-from knapsack import knapsack_brute_force
+from knapsack import knapsack_brute_force, knapsack_dynamic_programming
 
 def read_data_from_file(filename):
     with open(filename, 'r') as file:
@@ -23,9 +23,6 @@ def printing_result(function, items):
     print(f"Max value: {fmax}")
     print("Items in knapsack:", *items_in_knapsack)
 
-def knapsack_dynamic_programming():
-    pass
-
 if __name__ == '__main__':
     filename = 'data.txt'
     max_weight, n, items = read_data_from_file(filename)
@@ -37,7 +34,7 @@ if __name__ == '__main__':
         elif choice == "knapsack brute force" or choice == "bf":
             printing_result(knapsack_brute_force(max_weight, n, items), items)
         elif choice == "knapsack dynamic programming" or choice == "dp":
-            printing_result(knapsack_dynamic_programming(), items)
+            printing_result(knapsack_dynamic_programming(max_weight, n, items), items)
         elif choice == "exit":
             break
         else:
