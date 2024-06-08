@@ -11,3 +11,26 @@ def read_data_from_file(filename):
         
         items = tuple(items)
     return max_weight, n, items
+
+def knapsack_brute_force():
+    pass
+
+def knapsack_dynamic_programming():
+    pass
+
+if __name__ == '__main__':
+    filename = 'data.txt'
+    max_weight, n, items = read_data_from_file(filename)
+
+    while (True):
+        choice=input("action> ").strip().lower()
+        if choice == "help":
+            print("help")
+        elif choice == "knapsack brute force" or choice == "bf":
+            knapsack_brute_force()
+        elif choice == "knapsack dynamic programming" or choice == "dp":
+            knapsack_dynamic_programming()
+        elif choice == "exit":
+            break
+        else:
+            print("To view possible actions type: Help")
