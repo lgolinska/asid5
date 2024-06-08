@@ -3,28 +3,15 @@ by Lidia Golińska (157141) and Łukasz Przykłota (159440)
 
 ## Overview
 
-This project provides a solution to the knapsack problem using brute force and dynamic programming algorithms.
+One night, a group of thieves plans to heist an exclusive museum full of valuable paintings. Their goal is to select the most valuable works to maximize the profits from the heist. With the help of a special algorithm based on the knapsack problem, they choose those that will fit into a knapsack with a maximum weight of 50 kg. Will they succeed in their plan and escape with the museum treasures? Discover this exciting story in our project!
 
 ## Usage
 
-To use this project, follow these steps:
-
-1. Ensure you have Python installed on your system.
-2. Clone this repository to your local machine.
-3. Navigate to the project directory.
-4. Make sure your item data is stored in a file named `data.txt` in the following format:
-
-<maximum_weight_of_knapsack>
-  
-<number_of_items>
-  
-<valuable_items_list>
-
-5. Run the script using the following command:
+1. Run the script using the following command:
 ```sh
 python3 main.py
 ```
-6. Follow the on-screen instructions to interact with the program. Available actions are:
+2. Follow the on-screen instructions to interact with the program. Available actions are:
 
 - `help`: Show available actions.
 - `print items` or `print`: Print details of all items.
