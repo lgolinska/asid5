@@ -23,6 +23,12 @@ def printing_result(function, items):
     print(f"Max value: {fmax}")
     print("Items in knapsack:", *items_in_knapsack)
 
+def print_items(items):
+    print(f"{'NAME':<10} {'WEIGHT':<7} {'VALUE':<5}")
+    for item in items:
+        name, weight, value = item
+        print(f"{name:<10} {weight:<7} {value:<5}")
+
 if __name__ == '__main__':
     filename = 'data.txt'
     max_weight, n, items = read_data_from_file(filename)
@@ -35,6 +41,8 @@ if __name__ == '__main__':
             printing_result(knapsack_brute_force(max_weight, n, items), items)
         elif choice == "knapsack dynamic programming" or choice == "dp":
             printing_result(knapsack_dynamic_programming(max_weight, n, items), items)
+        elif choice == "print items" or choice == "print":
+            print_items(items)
         elif choice == "exit":
             break
         else:
