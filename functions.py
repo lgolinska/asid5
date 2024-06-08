@@ -1,3 +1,5 @@
+import random
+
 def read_data_from_file(filename):
     with open(filename, 'r') as file:
         max_weight = int(file.readline().strip())
@@ -28,3 +30,13 @@ def print_items(max_weight, n, items):
     for item in items:
         name, weight, value = item
         print(f"{name:<48} {weight:<8} {value:<5}")
+
+def feedback(choice):
+    if choice == "knapsack brute force" or choice == "bf":
+        feedback_options = ["Unfortunately, the algorithm was too slow and the thieves were captured.",
+                            "The algorithm was slow, but fortunately the security guards were asleep, so the thieves managed to escape with the loot."]
+    elif choice == "knapsack dynamic programming" or choice == "dp":
+        feedback_options = ["Fortunately, the algorithm was fast enough and the thieves managed to escape with the loot.",
+                            "The algorithm was quite fast, but unfortunately this time the security guards were alert and the thieves were captured."] 
+    feedback = random.choice(feedback_options)
+    return print("\n",feedback, sep='')
