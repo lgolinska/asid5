@@ -1,0 +1,9 @@
+50
+7
+nazwa0,14,4
+nazwa1,10,3
+nazwa2,15,4
+nazwa3,12,5
+nazwa4,18,6
+nazwa5,20,3
+nazwa6,8,2
