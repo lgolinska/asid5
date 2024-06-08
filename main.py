@@ -14,6 +14,15 @@ def read_data_from_file(filename):
         items = tuple(items)
     return max_weight, n, items
 
+def printing_result(function, items):
+    fmax, best_option = function
+    items_in_knapsack = []
+    for i in range(len(items)):
+        if best_option[i] == 1:
+            items_in_knapsack.append(items[i][0])
+    print(f"Max value: {fmax}")
+    print("Items in knapsack:", *items_in_knapsack)
+
 def knapsack_dynamic_programming():
     pass
 
@@ -26,9 +35,9 @@ if __name__ == '__main__':
         if choice == "help":
             print("help")
         elif choice == "knapsack brute force" or choice == "bf":
-            print(knapsack_brute_force(max_weight, n, items))
+            printing_result(knapsack_brute_force(max_weight, n, items), items)
         elif choice == "knapsack dynamic programming" or choice == "dp":
-            knapsack_dynamic_programming()
+            printing_result(knapsack_dynamic_programming(), items)
         elif choice == "exit":
             break
         else:
