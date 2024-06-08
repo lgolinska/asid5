@@ -1,3 +1,5 @@
+from knapsack import knapsack_brute_force
+
 def read_data_from_file(filename):
     with open(filename, 'r') as file:
         max_weight = int(file.readline().strip())
@@ -12,9 +14,6 @@ def read_data_from_file(filename):
         items = tuple(items)
     return max_weight, n, items
 
-def knapsack_brute_force():
-    pass
-
 def knapsack_dynamic_programming():
     pass
 
@@ -27,7 +26,7 @@ if __name__ == '__main__':
         if choice == "help":
             print("help")
         elif choice == "knapsack brute force" or choice == "bf":
-            knapsack_brute_force()
+            print(knapsack_brute_force(max_weight, n, items))
         elif choice == "knapsack dynamic programming" or choice == "dp":
             knapsack_dynamic_programming()
         elif choice == "exit":
