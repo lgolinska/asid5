@@ -1,33 +1,5 @@
 from knapsack import knapsack_brute_force, knapsack_dynamic_programming
-
-def read_data_from_file(filename):
-    with open(filename, 'r') as file:
-        max_weight = int(file.readline().strip())
-        n = int(file.readline().strip())
-        items = []
-        
-        for i in range(n):
-            line = file.readline().strip()
-            name, weight, value = line.split(',')
-            items.append((name, int(weight), int(value)))
-        
-        items = tuple(items)
-    return max_weight, n, items
-
-def printing_result(function, items):
-    fmax, best_option = function
-    items_in_knapsack = []
-    for i in range(len(items)):
-        if best_option[i] == 1:
-            items_in_knapsack.append(items[i][0])
-    print(f"Max value: {fmax}")
-    print("Items in knapsack:", *items_in_knapsack)
-
-def print_items(items):
-    print(f"{'NAME':<10} {'WEIGHT':<7} {'VALUE':<5}")
-    for item in items:
-        name, weight, value = item
-        print(f"{name:<10} {weight:<7} {value:<5}")
+from functions import read_data_from_file, printing_result, print_items
 
 if __name__ == '__main__':
     filename = 'data.txt'
@@ -36,13 +8,17 @@ if __name__ == '__main__':
     while (True):
         choice=input("action> ").strip().lower()
         if choice == "help":
-            print("help")
+           print("""Help                            Show this message
+Print items                     Print the maximum weight of the knapsack, the number of items available and list of items
+Knapsack brute force            Run knapsack brute force algorithm
+Knapsack dynamic programming    Run knapsack dynamic programming algorithm
+Exit                            Exits the program (same as ctrl+D)""")
         elif choice == "knapsack brute force" or choice == "bf":
             printing_result(knapsack_brute_force(max_weight, n, items), items)
         elif choice == "knapsack dynamic programming" or choice == "dp":
             printing_result(knapsack_dynamic_programming(max_weight, n, items), items)
         elif choice == "print items" or choice == "print":
-            print_items(items)
+            print_items(max_weight, n, items)
         elif choice == "exit":
             break
         else:
